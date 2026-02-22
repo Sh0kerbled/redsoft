@@ -1,96 +1,32 @@
 <template>
   <svg
     width="1200"
-    height="870"
-    viewBox="0 0 1200 870"
+    height="636"
+    viewBox="0 0 1200 636"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
   >
-    <g filter="url(#filter0_dd_2440_568)">
-      <rect x="44" y="152" width="1112" height="598" rx="36" fill="black" />
-      <rect
-        x="44.5"
-        y="152.5"
-        width="1111"
-        height="597"
-        rx="35.5"
-        stroke="#1F1E1E"
-      />
-    </g>
-    <rect
-      x="60"
-      y="168"
-      width="1080"
-      height="608"
-      fill="url(#pattern0_2440_568)"
-    />
-    <rect
-      y="263"
-      width="1200"
-      height="541"
-      fill="url(#paint0_linear_2440_568)"
-    />
+    <rect x="60" width="1080" height="608" fill="url(#pattern0_16_150)" />
+    <rect y="95" width="1200" height="541" fill="url(#paint0_linear_16_150)" />
     <defs>
-      <filter
-        id="filter0_dd_2440_568"
-        x="-76"
-        y="0"
-        width="1384"
-        height="870"
-        filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
-      >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy="-32" />
-        <feGaussianBlur stdDeviation="60" />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0.473878 0 0 0 0 0.355769 0 0 0 0 1 0 0 0 0.25 0"
-        />
-        <feBlend
-          mode="normal"
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_2440_568"
-        />
-        <feOffset dx="32" />
-        <feGaussianBlur stdDeviation="60" />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0.47451 0 0 0 0 0.356863 0 0 0 0 1 0 0 0 0.25 0"
-        />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect2_dropShadow_2440_568"
-          result="shape"
-        />
-      </filter>
       <pattern
-        id="pattern0_2440_568"
+        id="pattern0_16_150"
         patternContentUnits="objectBoundingBox"
         width="1"
         height="1"
       >
         <use
-          xlink:href="#image0_2440_568"
+          xlink:href="#image0_16_150"
           transform="matrix(0.000521262 0 0 0.000925926 -0.000411523 0)"
         />
       </pattern>
       <linearGradient
-        id="paint0_linear_2440_568"
+        id="paint0_linear_16_150"
         x1="600"
-        y1="283.544"
+        y1="115.544"
         x2="600"
-        y2="728.492"
+        y2="560.492"
         gradientUnits="userSpaceOnUse"
       >
         <stop stop-opacity="0" />
@@ -98,7 +34,7 @@
         <stop offset="1" />
       </linearGradient>
       <image
-        id="image0_2440_568"
+        id="image0_16_150"
         width="1920"
         height="1080"
         preserveAspectRatio="none"
