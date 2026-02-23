@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>RedSoft</title>
   </head>
   <body class="bg-[#07030A]">
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+      const wow = new WOW()
+        wow.init()
+
+        // после рендера
+        wow.sync()
+    </script>
   </body>
 </html>

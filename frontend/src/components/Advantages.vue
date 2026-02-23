@@ -1,43 +1,159 @@
 <template>
-  <section class="container mx-auto px-6 py-16">
-    <h2 class="text-3xl font-bold text-center mb-12">Advantages</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div
-        v-for="adv in advantages"
-        :key="adv.title"
-        class="bg-gradient-to-br from-[#1a0b12] to-[#0a0508] border border-red-900/40 rounded-2xl p-8 relative overflow-hidden group hover:border-red-700 transition duration-300"
+  <div
+    class="w-full bg-[#050208] flex justify-center overflow-x-hidden font-['Montserrat'] relative"
+  >
+    <div class="relative w-[1200px] h-[742px] shrink-0">
+      <h2
+        class="absolute w-[1040px] h-[39px] left-[80px] top-[96px] font-bold text-[32px] leading-[39px] text-center text-white m-0 z-10"
       >
+        Advantages
+      </h2>
+
+      <div class="absolute w-[1040px] h-[447px] left-[80px] top-[199px] z-10">
         <div
-          class="absolute top-0 right-0 w-32 h-32 bg-red-600/10 rounded-bl-full blur-xl"
-        ></div>
+          class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-0 top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
+        >
+          <div
+            class="absolute w-[172px] h-[172px] -left-[24px] -bottom-[24px] bg-[#8B0000] rounded-full blur-[100px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[212px] h-[212px] -right-[50px] -top-[50px] bg-[#8B0000] rounded-full blur-[60px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[200px] h-[200px] -right-[44px] -top-[44px] z-10 opacity-30 pointer-events-none flex items-center justify-center"
+          >
+            <ShapeShield class="w-[66.6%] h-[74.36%] text-[#F1C3C6]" />
+          </div>
+
+          <div
+            class="relative flex flex-row items-center justify-center p-[16px] gap-[10px] w-[84px] h-[84px] bg-[linear-gradient(180deg,#C42A17_0%,#8B0000_100%)] rounded-[20px] z-20 shrink-0"
+          >
+            <div
+              class="relative w-[52px] h-[52px] flex items-center justify-center"
+            >
+              <Shield class="w-[66.6%] h-[74.36%] text-[#FAE7E9]" />
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col items-start gap-[16px] w-[264px] h-[279px] flex-grow z-20"
+          >
+            <h3
+              class="w-full h-[35px] font-semibold text-[29px] leading-[35px] text-white m-0"
+            >
+              Protection
+            </h3>
+            <p
+              class="w-full h-auto flex-grow font-normal text-[20px] leading-[28px] text-[#F5F5F5] m-0"
+            >
+              We guarantee the security of your data. Using hashing algorithms
+              prevents passwords from being stored in plaintext, protecting your
+              library from unauthorized access
+            </p>
+          </div>
+        </div>
+
         <div
-          class="w-12 h-12 rounded-lg bg-red-950 border border-red-800 flex items-center justify-center mb-6 text-red-500"
-          v-html="adv.icon"
-        ></div>
-        <h3 class="text-xl font-bold mb-3">{{ adv.title }}</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">{{ adv.desc }}</p>
+          class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-[360px] top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
+        >
+          <div
+            class="absolute w-[172px] h-[172px] -left-[24px] -bottom-[24px] bg-[#8B0000] rounded-full blur-[100px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[212px] h-[212px] -right-[50px] -top-[50px] bg-[#8B0000] rounded-full blur-[60px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[200px] h-[200px] -right-[44px] -top-[44px] z-10 opacity-30 pointer-events-none flex items-center justify-center"
+          >
+            <ShapeTime class="w-[75%] h-[75%] text-[#F1C3C6]" />
+          </div>
+
+          <div
+            class="relative flex flex-row items-center justify-center p-[16px] gap-[10px] w-[84px] h-[84px] bg-[linear-gradient(180deg,#C42A17_0%,#8B0000_100%)] rounded-[20px] z-20 shrink-0"
+          >
+            <div
+              class="relative w-[52px] h-[52px] flex items-center justify-center"
+            >
+              <Time class="w-[75%] h-[75%] text-[#FAE7E9]" />
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col items-start gap-[16px] w-[264px] h-[275px] z-20"
+          >
+            <h3
+              class="w-full h-[35px] font-semibold text-[29px] leading-[35px] text-white m-0"
+            >
+              Time
+            </h3>
+            <p
+              class="w-full h-auto font-normal text-[20px] leading-[28px] text-[#F5F5F5] m-0"
+            >
+              Forget about manually searching through text files. Our system
+              optimizes database work, allowing you to find the right account
+              among thousands of records in a split second
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-[720px] top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
+        >
+          <div
+            class="absolute w-[172px] h-[172px] -left-[24px] -bottom-[24px] bg-[#8B0000] rounded-full blur-[100px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[212px] h-[212px] -right-[50px] -top-[50px] bg-[#8B0000] rounded-full blur-[60px] pointer-events-none z-0"
+          ></div>
+
+          <div
+            class="absolute w-[200px] h-[200px] left-[164px] -top-[50px] z-10 opacity-30 pointer-events-none flex items-center justify-center"
+          >
+            <ShapePrice class="w-[75%] h-[58.34%] text-[#F1C3C6]" />
+          </div>
+
+          <div
+            class="relative flex flex-row items-center justify-center p-[16px] gap-[10px] w-[84px] h-[84px] bg-[linear-gradient(180deg,#C42A17_0%,#8B0000_100%)] rounded-[20px] z-20 shrink-0"
+          >
+            <div
+              class="relative w-[52px] h-[52px] flex items-center justify-center"
+            >
+              <Price class="w-[75%] h-[58.34%] text-[#FAE7E9]" />
+            </div>
+          </div>
+
+          <div
+            class="relative flex flex-col items-start gap-[16px] w-[264px] h-[279px] flex-grow z-20"
+          >
+            <h3
+              class="w-full h-[35px] font-semibold text-[29px] leading-[35px] text-white m-0"
+            >
+              Price
+            </h3>
+            <p
+              class="w-full h-auto flex-grow font-normal text-[20px] leading-[28px] text-[#F5F5F5] m-0"
+            >
+              We offer a professional solution at an affordable price. The price
+              is fully consistent with the quality of the automation tools and
+              the level of protection you receive
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
-const advantages = [
-  {
-    title: "Protection",
-    desc: "We guarantee the security of your data. Many hashing algorithms prevent passwords from being stored in plain text, protecting your library from unauthorized access.",
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>',
-  },
-  {
-    title: "Time",
-    desc: "Forget about manually searching through text files. Our system optimizes database work, allowing us to find the right account among thousands of records in a split second.",
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
-  },
-  {
-    title: "Price",
-    desc: "We offer a professional solution at an affordable price. The price is fully consistent with the quality of the automation tools and the level of protection you receive.",
-    icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>',
-  },
-];
+import Shield from "../assets/Shield.vue";
+import Time from "../assets/Time.vue";
+import Price from "../assets/Price.vue";
+import ShapeShield from "../assets/ShapeShield.vue";
+import ShapeTime from "../assets/ShapeTime.vue";
+import ShapePrice from "../assets/ShapePrice.vue";
 </script>

@@ -11,6 +11,7 @@
       <FAQ />
       <Pricing />
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -22,4 +23,5 @@ import Features from "./components/Features.vue";
 import Advantages from "./components/Advantages.vue";
 import FAQ from "./components/FAQ.vue";
 import Pricing from "./components/Pricing.vue";
+import Footer from "./components/Footer.vue";
 </script>
