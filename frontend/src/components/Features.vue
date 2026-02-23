@@ -14,7 +14,7 @@
         class="absolute w-[600px] h-[338px] left-[520px] top-[241px] bg-[url('/Game.png')] bg-cover bg-no-repeat bg-center z-10"
       ></Game>
       <h2
-        class="absolute w-[1040px] h-[39px] left-[80px] top-[96px] font-bold text-[32px] leading-[39px] text-center text-white m-0 z-50"
+        class="absolute w-[1040px] h-[39px] left-[80px] top-[96px] font-bold text-[32px] leading-[39px] text-center text-white m-0 z-40"
       >
         Features
       </h2>

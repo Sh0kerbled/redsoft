@@ -13,6 +13,7 @@
         </div>
         <div class="relative w-full h-full overflow-hidden">
           <div
+            data-aos="fade-down-right"
             class="relative z-10 flex flex-col justify-center items-start gap-[52px] w-[631px] h-[523px] left-[80px] top-[44px] animate__animated animate__fadeInTopLeft"
           >
             <h2 class="font-bold text-[28px] leading-[34px] text-white m-0">
@@ -57,6 +58,9 @@
           </div>
         </div>
         <BigLogo
+          data-aos="fade-down-left"
+          data-aos-duration="900"
+          data-aos-easing="ease-out-cubic"
           class="absolute w-[285px] h-[285px] left-[835px] top-[163px] z-10 wow animate__animated animate__fadeInTopRight"
         />
       </div>

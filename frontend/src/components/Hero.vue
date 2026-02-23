@@ -13,22 +13,27 @@
 
       <div class="absolute top-[416px] left-0 w-[1200px] h-[656px] z-10">
         <div
-          class="absolute w-[1112px] h-[598px] left-[calc(50%-556px)] top-[4px] bg-black border border-[#1F1E1E] shadow-[32px_0px_120px_rgba(121,91,255,0.25),0px_-32px_120px_rgba(121,91,255,0.25)] rounded-[36px]"
-        ></div>
-
-        <Main
           data-aos="fade-up-big"
           data-aos-duration="900"
           data-aos-easing="ease-out-cubic"
-          class="absolute w-[1080px] h-[608px] left-[calc(50%-540px)] top-[20px] bg-cover bg-no-repeat bg-center"
-        ></Main>
+        >
+          <div
+            class="absolute w-[1112px] h-[598px] left-[calc(50%-556px)] top-[4px] bg-black border border-[#1F1E1E] shadow-[32px_0px_120px_rgba(121,91,255,0.25),0px_-32px_120px_rgba(121,91,255,0.25)] rounded-[36px]"
+          ></div>
 
+          <Main
+            class="absolute w-[1080px] h-[608px] left-[calc(50%-540px)] top-[20px] bg-cover bg-no-repeat bg-center"
+          ></Main>
+        </div>
         <div
           class="absolute h-[541px] w-[100vw] left-1/2 -translate-x-1/2 bottom-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_3.8%,#050208_73.71%,#000000_86.04%)] pointer-events-none z-20"
         ></div>
       </div>
 
       <div
+        data-aos="fade-down-big"
+        data-aos-duration="900"
+        data-aos-easing="ease-out-cubic"
         class="absolute top-0 left-0 w-[1200px] h-[384px] flex flex-col items-center pointer-events-none z-20"
       >
         <div
