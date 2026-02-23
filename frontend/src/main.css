@@ -4,3 +4,13 @@
 html {
     scroll-behavior: smooth;
 }
+
+[data-aos="fade-up-big"] {
+    transform: translate3d(0, 600px, 0);
+    opacity: 0;
+}
+
+[data-aos="fade-up-big"].aos-animate {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}

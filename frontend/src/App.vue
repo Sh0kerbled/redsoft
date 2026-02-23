@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#07030A] min-h-screen text-white font-montserrat selection:bg-red-600 selection:text-white"
+    class="bg-[#07030A] min-h-screen text-white font-montserrat selection:bg-red-600 selection:text-white overflow-hidden"
   >
     <Navbar />
     <main>

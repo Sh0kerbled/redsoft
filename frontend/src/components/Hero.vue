@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full min-h-screen bg-[#050208] flex justify-center overflow-x-hidden font-['Montserrat']"
+    class="w-full min-h-screen bg-[#050208] flex justify-center font-['Montserrat']"
   >
     <div class="relative w-[1200px] h-[1072px] shrink-0">
       <div
@@ -8,17 +8,18 @@
       ></div>
 
       <div
-        class="absolute w-[500px] h-[387px] left-[calc(50%-250px)] top-[329px] bg-[linear-gradient(180deg,#FF001C_0%,#3B2E86_70.67%,#0E0B20_100%)] blur-[125px] pointer-events-none z-0 wow animate__animated animate__slideInDown"
+        class="absolute w-[500px] h-[387px] left-[calc(50%-250px)] top-[329px] bg-[linear-gradient(180deg,#FF001C_0%,#3B2E86_70.67%,#0E0B20_100%)] blur-[125px] pointer-events-none z-0"
       ></div>
 
-      <div
-        class="absolute top-[416px] left-0 w-[1200px] h-[656px] wow animate__animated animate__slideInUp z-10"
-      >
+      <div class="absolute top-[416px] left-0 w-[1200px] h-[656px] z-10">
         <div
           class="absolute w-[1112px] h-[598px] left-[calc(50%-556px)] top-[4px] bg-black border border-[#1F1E1E] shadow-[32px_0px_120px_rgba(121,91,255,0.25),0px_-32px_120px_rgba(121,91,255,0.25)] rounded-[36px]"
         ></div>
 
         <Main
+          data-aos="fade-up-big"
+          data-aos-duration="900"
+          data-aos-easing="ease-out-cubic"
           class="absolute w-[1080px] h-[608px] left-[calc(50%-540px)] top-[20px] bg-cover bg-no-repeat bg-center"
         ></Main>
 
@@ -28,7 +29,7 @@
       </div>
 
       <div
-        class="absolute top-0 left-0 w-[1200px] h-[384px] flex flex-col items-center pointer-events-none wow animate__animated animate__slideInDown z-20"
+        class="absolute top-0 left-0 w-[1200px] h-[384px] flex flex-col items-center pointer-events-none z-20"
       >
         <div
           class="relative flex flex-col items-center pt-[52px] gap-[20px] w-[1200px] h-[296px] pointer-events-auto"
