@@ -5,7 +5,7 @@
     <Navbar class="sticky top-0 z-50" />
     <main>
       <Hero />
-      <About class="relative z-50" />
+      <About class="relative z-40" />
       <Features />
       <Advantages />
       <FAQ />

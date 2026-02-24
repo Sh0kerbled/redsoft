@@ -12,6 +12,7 @@
           v-for="link in menuLinks"
           :key="link.text"
           href="#"
+          @click.prevent="scrollTo(link.id)"
           class="text-[16px] font-medium leading-5 text-[#9D9D9D] hover:text-white transition-colors whitespace-nowrap"
         >
           {{ link.text }}
@@ -57,17 +58,18 @@
 
 <script setup>
 import logo from "../assets/logo.vue";
-const menuLinks = [
-  { text: "About us" },
-  { text: "Features" },
-  { text: "FAQ" },
-  { text: "Pricing" },
-];
-</script>
 
-<style>
-body {
-  margin: 0;
-  background-color: #1a1a1a;
+const menuLinks = [
+  { text: "About us", id: "about" },
+  { text: "Features", id: "features" },
+  { text: "FAQ", id: "faq" },
+  { text: "Pricing", id: "pricing" },
+];
+
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 }
-</style>
+</script>
