@@ -25,3 +25,13 @@ html {
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #A71613;
+}

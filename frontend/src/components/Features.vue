@@ -48,8 +48,7 @@
           "
         ></div>
         <div
-          data-aos="fade-up"
-          class="absolute flex flex-col items-start px-[32px] gap-[16px] w-[1040px] h-[175px] left-0 top-[421px] z-50"
+          class="absolute bg-black flex flex-col items-start px-[32px] gap-[16px] w-[1040px] h-[175px] left-0 top-[421px] z-50"
         >
           <h3
             class="w-[976px] h-[39px] font-semibold text-[32px] leading-[39px] text-white m-0"
