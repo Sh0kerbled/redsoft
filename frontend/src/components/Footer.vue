@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-[#050208] flex justify-center font-['Montserrat'] border-t border-[#434343]"
+    class="w-full bg-black flex justify-center font-['Montserrat'] border-t border-[#434343]"
   >
     <div
       class="box-border flex flex-row justify-between items-center px-[80px] py-[96px] gap-[181px] w-[1200px] h-[545px]"

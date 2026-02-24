@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-[#050208] flex justify-center overflow-y-clip font-['Montserrat']"
+    class="w-full bg-black flex justify-center overflow-y-clip font-['Montserrat']"
   >
     <div class="relative w-[1200px] h-[715px] shrink-0">
       <div

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-[#050208] flex justify-center overflow-x-hidden font-['Montserrat']"
+    class="w-full bg-black flex justify-center overflow-x-hidden font-['Montserrat']"
   >
     <div data-aos="fade-down" class="relative w-[1200px] h-[891px] shrink-0">
       <div
