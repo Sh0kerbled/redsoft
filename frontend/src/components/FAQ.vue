@@ -10,6 +10,7 @@
         class="absolute w-[400px] h-[400px] left-[920px] top-[699px] bg-[linear-gradient(180deg,#A71613_0%,#2600FF_100%)] rounded-full blur-[210px] pointer-events-none z-0 mix-blend-screen"
       ></div>
       <div
+        data-aos="fade-down"
         class="absolute flex flex-col items-center gap-[16px] w-[649px] h-[79px] left-[275.5px] top-[96px] z-10"
       >
         <h2
@@ -24,6 +25,7 @@
         </p>
       </div>
       <div
+        data-aos="fade-up"
         v-for="(item, index) in faqItems"
         :key="index"
         class="absolute box-border flex flex-row justify-between items-center px-[24px] py-[24px] w-[960px] h-[72px] left-[120px] border-[2px] border-[#434343] rounded-[20px] z-10 cursor-pointer hover:bg-white/5 transition-colors bg-[#050208]/50 backdrop-blur-sm"

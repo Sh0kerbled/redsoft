@@ -12,11 +12,7 @@
       ></div>
 
       <div class="absolute top-[416px] left-0 w-[1200px] h-[656px] z-10">
-        <div
-          data-aos="fade-up-big"
-          data-aos-duration="900"
-          data-aos-easing="ease-out-cubic"
-        >
+        <div class="animate-fade-up animate-once animate-duration-[800ms]">
           <div
             class="absolute w-[1112px] h-[598px] left-[calc(50%-556px)] top-[4px] bg-black border border-[#1F1E1E] shadow-[32px_0px_120px_rgba(121,91,255,0.25),0px_-32px_120px_rgba(121,91,255,0.25)] rounded-[36px]"
           ></div>
@@ -31,10 +27,7 @@
       </div>
 
       <div
-        data-aos="fade-down-big"
-        data-aos-duration="900"
-        data-aos-easing="ease-out-cubic"
-        class="absolute top-0 left-0 w-[1200px] h-[384px] flex flex-col items-center pointer-events-none z-20"
+        class="absolute top-0 left-0 w-[1200px] h-[384px] flex flex-col items-center pointer-events-none z-20 animate-fade-down animate-once animate-duration-[800ms]"
       >
         <div
           class="relative flex flex-col items-center pt-[52px] gap-[20px] w-[1200px] h-[296px] pointer-events-auto"

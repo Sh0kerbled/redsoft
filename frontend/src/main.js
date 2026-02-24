@@ -6,8 +6,14 @@ import "aos/dist/aos.css"; // Импорт стилей обязателен
 createApp(App).mount("#app");
 
 AOS.init({
-  duration: 800,
   once: true,
+  duration: 800,
+  easing: "ease-out-cubic",
+  offset: 120,
+  disableMutationObserver: true,
 });
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
 
 app.mount("#app");

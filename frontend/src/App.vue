@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-[#07030A] min-h-screen text-white font-montserrat selection:bg-red-600 selection:text-white"
+    class="bg-black min-h-screen text-white font-montserrat selection:bg-red-600 selection:text-white"
   >
     <Navbar class="sticky top-0 z-50" />
     <main>

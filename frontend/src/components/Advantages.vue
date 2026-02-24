@@ -4,6 +4,7 @@
   >
     <div class="relative w-[1200px] h-[742px] shrink-0">
       <h2
+        data-aos="fade-down"
         class="absolute w-[1040px] h-[39px] left-[80px] top-[96px] font-bold text-[32px] leading-[39px] text-center text-white m-0 z-10"
       >
         Advantages
@@ -11,6 +12,7 @@
 
       <div class="absolute w-[1040px] h-[447px] left-[80px] top-[199px] z-10">
         <div
+          data-aos="fade-right"
           class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-0 top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
         >
           <div
@@ -56,6 +58,7 @@
         </div>
 
         <div
+          data-aos="fade-up"
           class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-[360px] top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
         >
           <div
@@ -101,6 +104,7 @@
         </div>
 
         <div
+          data-aos="fade-left"
           class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[24px] w-[320px] h-[447px] left-[720px] top-0 bg-[linear-gradient(180deg,rgba(196,42,23,0.32)_0%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-20 overflow-hidden"
         >
           <div

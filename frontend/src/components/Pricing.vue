@@ -18,6 +18,7 @@
       </div>
 
       <div
+        data-aos="fade-down"
         class="absolute flex flex-col items-center gap-[24px] w-[1040px] h-[111px] left-[80px] top-[96px] z-10"
       >
         <h2
@@ -34,6 +35,7 @@
       </div>
 
       <div
+        data-aos="fade-right"
         class="absolute flex flex-col items-start p-[28px_28px_32px] gap-[40px] w-[320px] h-[519px] left-[80px] top-[271px] bg-[linear-gradient(180deg,rgba(139,0,0,0.32)_10%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-10 overflow-hidden"
       >
         <div
@@ -83,12 +85,13 @@
         >
           <span
             class="font-normal text-[20px] leading-[24px] text-center text-white"
-            >Sign in</span
+            >Activate</span
           >
         </button>
       </div>
 
       <div
+        data-aos="fade-up"
         class="absolute flex flex-col items-center p-[28px_28px_32px] gap-[80px] w-[320px] h-[519px] left-[440px] top-[271px] bg-[linear-gradient(180deg,rgba(255,255,255,0.0032)_0%,rgba(139,0,0,0.32)_90.03%)] rounded-[20px] isolate z-10 overflow-hidden"
       >
         <div
@@ -140,12 +143,13 @@
         >
           <span
             class="font-normal text-[20px] leading-[24px] text-center text-white"
-            >Sign in</span
+            >Activate</span
           >
         </button>
       </div>
 
       <div
+        data-aos="fade-left"
         class="absolute flex flex-col justify-end items-center p-[28px_28px_32px] gap-[80px] w-[320px] h-[519px] left-[800px] top-[271px] bg-[linear-gradient(180deg,rgba(139,0,0,0.32)_10%,rgba(255,255,255,0.0032)_100%)] rounded-[20px] isolate z-10 overflow-hidden"
       >
         <div
@@ -197,7 +201,7 @@
         >
           <span
             class="font-normal text-[20px] leading-[24px] text-center text-white"
-            >Sign in</span
+            >Activate</span
           >
         </button>
       </div>

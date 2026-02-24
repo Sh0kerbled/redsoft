@@ -11,10 +11,12 @@
         >
           <Pattern class="w-full h-full" />
         </div>
-        <div class="relative w-full h-full overflow-hidden">
+        <div
+          class="relative w-full h-full overflow-hidden animate-fade-right animate-once animate-duration-[800ms]"
+        >
           <div
-            data-aos="fade-down-right"
-            class="relative z-10 flex flex-col justify-center items-start gap-[52px] w-[631px] h-[523px] left-[80px] top-[44px] animate__animated animate__fadeInTopLeft"
+            data-aos="fade-right"
+            class="relative z-10 flex flex-col justify-center items-start gap-[52px] w-[631px] h-[523px] left-[80px] top-[44px]"
           >
             <h2 class="font-bold text-[28px] leading-[34px] text-white m-0">
               About Us
@@ -28,6 +30,7 @@
                   Automate your progress and maximize your benefits!
                 </h3>
                 <p
+                  id="about-anchor"
                   class="font-normal text-[20px] leading-[28px] text-[#F5F5F5] m-0"
                 >
                   Our product offers powerful functionality for centralized
@@ -58,10 +61,9 @@
           </div>
         </div>
         <BigLogo
-          data-aos="fade-down-left"
-          data-aos-duration="900"
-          data-aos-easing="ease-out-cubic"
-          class="absolute w-[285px] h-[285px] left-[835px] top-[163px] z-10 wow animate__animated animate__fadeInTopRight"
+          data-aos="fade-left"
+          data-aos-anchor="#about-anchor"
+          class="absolute w-[285px] h-[285px] left-[835px] top-[163px] z-10"
         />
       </div>
 

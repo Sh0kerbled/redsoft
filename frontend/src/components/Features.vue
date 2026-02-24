@@ -2,7 +2,7 @@
   <div
     class="w-full bg-[#050208] flex justify-center overflow-x-hidden font-['Montserrat']"
   >
-    <div class="relative w-[1200px] h-[891px] shrink-0">
+    <div data-aos="fade-down" class="relative w-[1200px] h-[891px] shrink-0">
       <div
         class="absolute w-[736px] h-[563px] left-[calc(50%-368px)] top-[96px] bg-[#560000] rounded-[50%] blur-[60px] pointer-events-none z-0"
       ></div>
@@ -48,6 +48,7 @@
           "
         ></div>
         <div
+          data-aos="fade-up"
           class="absolute flex flex-col items-start px-[32px] gap-[16px] w-[1040px] h-[175px] left-0 top-[421px] z-50"
         >
           <h3

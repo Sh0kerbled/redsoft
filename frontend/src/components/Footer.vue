@@ -14,14 +14,14 @@
           <div class="flex flex-row items-center gap-[12px] w-[383px] h-[56px]">
             <Logo class="w-[56px] h-[56px] justify-center"></Logo>
             <span
-              class="font-['Inter'] font-semibold text-[24px] leading-[26px] flex items-center text-white"
+              class="font-['Montserrat'] font-semibold text-[24px] leading-[26px] flex items-center text-white"
             >
               REDSOFT
             </span>
           </div>
 
           <p
-            class="w-[383px] h-[130px] font-['Inter'] font-normal text-[20px] leading-[26px] flex items-center text-[#D9D9D9] m-0"
+            class="w-[383px] h-[130px] font-['Montserrat'] font-normal text-[20px] leading-[26px] flex items-center text-[#D9D9D9] m-0"
           >
             Advanced automation and management tools for Steam. Professional
             dashboard, real-time monitoring, and secure stealth algorithms. Take
