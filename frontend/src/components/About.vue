@@ -82,6 +82,6 @@
 </template>
 
 <script setup>
-import BigLogo from "../assets/BigLogo.vue";
-import Pattern from "../assets/Pattern.vue";
+import BigLogo from "@/assets/BigLogo.vue";
+import Pattern from "@/assets/Pattern.vue";
 </script>

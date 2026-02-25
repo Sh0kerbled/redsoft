@@ -45,7 +45,7 @@
         </div>
 
         <RouterLink
-          to="/auth"
+          to="/Auth"
           class="flex items-center justify-center w-[158px] h-[44px] bg-[#8B0000] hover:bg-[#a80000] rounded-[12px] transition-colors"
         >
           <span class="text-[16px] font-semibold leading-5 text-white">
@@ -58,7 +58,7 @@
 </template>
 
 <script setup>
-import logo from "../assets/logo.vue";
+import logo from "../../assets/logo.vue";
 import { RouterLink } from "vue-router";
 const menuLinks = [
   { text: "About us", id: "about" },
