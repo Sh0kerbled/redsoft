@@ -8,15 +8,14 @@
       <nav
         class="hidden md:flex items-center px-10 py-2 gap-16 h-[52px] border border-[#434343] rounded-[40px] ml-[200px]"
       >
-        <a
+        <RouterLink
           v-for="link in menuLinks"
           :key="link.text"
-          href="#"
-          @click.prevent="scrollTo(link.id)"
+          :to="{ path: '/', hash: `#${link.id}` }"
           class="text-[16px] font-medium leading-5 text-[#9D9D9D] hover:text-white transition-colors whitespace-nowrap"
         >
           {{ link.text }}
-        </a>
+        </RouterLink>
       </nav>
 
       <div class="flex items-center gap-8">

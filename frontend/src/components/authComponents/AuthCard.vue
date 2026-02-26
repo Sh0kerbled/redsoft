@@ -1,11 +1,10 @@
 <template>
   <div
-    class="min-h-screen w-full bg-black flex items-center justify-center font-['Montserrat']"
+    class="w-full my-10 bg-black flex items-center justify-center font-['Montserrat']"
   >
     <div
       class="relative w-[1040px] h-[682px] bg-black shadow-[0_0_12px_rgba(255,255,255,0.5)] rounded-[40px] overflow-hidden"
     >
-      <!-- ─── Sign In Form (Static) ─── -->
       <div
         class="absolute top-0 left-0 w-[559px] h-full flex flex-col items-center justify-center z-10 transition-all duration-700 ease-in-out"
         :class="

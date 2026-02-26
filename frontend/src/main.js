@@ -2,10 +2,14 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./main.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // Импорт стилей обязателен
+import "aos/dist/aos.css";
 import router from "./router";
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+app.use(router);
+app.mount("#app");
+
 router.isReady().then(() => {
   AOS.init({
     once: true,
@@ -15,8 +19,7 @@ router.isReady().then(() => {
     disableMutationObserver: true,
   });
 });
+
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
-
-app.mount("#app");
