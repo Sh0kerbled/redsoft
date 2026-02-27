@@ -5,6 +5,8 @@
     <div
       class="relative w-[1040px] h-[682px] bg-black shadow-[0_0_12px_rgba(255,255,255,0.5)] rounded-[40px] overflow-hidden"
     >
+      <NikolayCircles />
+      <NikolayCirclesBlue class="absolute left-[890px] top-[532px]" />
       <div
         class="absolute top-0 left-0 w-[559px] h-full flex flex-col items-center justify-center z-10 transition-all duration-700 ease-in-out"
         :class="
@@ -62,7 +64,6 @@
         </div>
       </div>
 
-      <!-- ─── Sign Up Form (Static) ─── -->
       <div
         class="absolute top-0 left-0 w-[559px] h-full flex flex-col items-center justify-center z-10 transition-all duration-700 ease-in-out"
         :class="
@@ -123,7 +124,6 @@
         </div>
       </div>
 
-      <!-- ─── Sliding Gradient Overlay ─── -->
       <div
         class="absolute top-0 w-[481px] h-full z-20 flex items-center justify-center overflow-hidden transition-all duration-700 ease-in-out"
         :class="
@@ -132,21 +132,17 @@
             : 'translate-x-[559px] rounded-[164px_40px_40px_164px]'
         "
       >
-        <!-- Слой 1: Красный градиент (исчезает при переключении) -->
         <div
           class="absolute inset-0 w-full h-full bg-[linear-gradient(90deg,#A33839_0%,#5B0002_100%)] transition-opacity duration-700 ease-in-out"
           :class="isSignUpActive ? 'opacity-0' : 'opacity-100'"
         ></div>
 
-        <!-- Слой 2: Синий градиент (появляется при переключении) -->
         <div
           class="absolute inset-0 w-full h-full bg-[linear-gradient(90deg,#0B005B_0%,#383BA3_100%)] transition-opacity duration-700 ease-in-out"
           :class="isSignUpActive ? 'opacity-100' : 'opacity-0'"
         ></div>
 
-        <!-- Контент внутри оверлея (должен быть выше фонов, поэтому relative z-10) -->
         <div class="relative z-10 w-full h-full">
-          <!-- Hello, Friend! -->
           <div
             class="absolute w-full top-[calc(50%-123.5px)] flex flex-col items-center gap-[40px] transition-all duration-700 ease-in-out"
             :class="
@@ -174,7 +170,6 @@
             </button>
           </div>
 
-          <!-- Welcome Back! -->
           <div
             class="absolute w-full top-[calc(50%-123.5px)] flex flex-col items-center gap-[40px] transition-all duration-700 ease-in-out"
             :class="
@@ -208,6 +203,8 @@
 
 <script setup>
 import { ref } from "vue";
+import NikolayCircles from "../../assets/NikolayCircles.vue";
+import NikolayCirclesBlue from "../../assets/NikolayCirclesBlue.vue";
 
 const isSignUpActive = ref(false);
 
