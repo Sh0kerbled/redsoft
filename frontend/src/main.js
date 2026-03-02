@@ -4,10 +4,13 @@ import "./main.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import router from "./router";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 const app = createApp(App);
 
-app.use(router);
+app.use(router, axios);
 app.mount("#app");
 
 router.isReady().then(() => {
