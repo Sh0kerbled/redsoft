@@ -47,7 +47,7 @@
                 </div>
                 <a
                   href="#"
-                  class="font-normal text-[20px] leading-[24px] text-white hover:underline"
+                  class="font-normal text-[20px] leading-[24px] text-white hover:underline flex justify-center"
                 >
                   Forgot your password?
                 </a>
