@@ -1,8 +1,8 @@
 <template>
-  <router-view />
+  <RouterView />
 </template>
 
-<script>
+<!-- <script>
 export default {
   name: "App",
   beforeCreate() {
@@ -15,7 +15,7 @@ export default {
     }
   },
 };
-</script>
+</script> -->
 
 <script setup>
 import { RouterView } from "vue-router";
