@@ -3,8 +3,9 @@
     <div
       class="max-w-[1200px] h-[100px] mx-auto px-16 flex items-center justify-between box-border"
     >
-      <logo />
-
+      <RouterLink to="/">
+        <logo />
+      </RouterLink>
       <nav
         class="hidden md:flex items-center px-10 py-2 gap-16 h-[52px] border border-[#434343] rounded-[40px] ml-[200px]"
       >
