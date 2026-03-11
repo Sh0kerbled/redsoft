@@ -26,11 +26,15 @@
               Use your E-mail and Password
             </p>
             <div class="flex flex-col gap-[32px] w-full">
-              <div class="flex flex-col gap-[12px] w-full">
+              <form
+                @submit.prevent="submitLogin"
+                class="flex flex-col gap-[12px] w-full"
+              >
                 <div
                   class="flex items-center p-[24px] h-[72px] bg-[#1F1E1E] rounded-[20px]"
                 >
                   <input
+                    v-model="loginData.email"
                     type="email"
                     placeholder="E-mail"
                     class="flex-grow bg-transparent font-normal text-[20px] text-white outline-none placeholder-white/50"
@@ -40,6 +44,7 @@
                   class="flex items-center p-[24px] h-[72px] bg-[#1F1E1E] rounded-[20px]"
                 >
                   <input
+                    v-model="loginData.password"
                     type="password"
                     placeholder="Password"
                     class="flex-grow bg-transparent font-normal text-[20px] text-white outline-none placeholder-white/50"
@@ -51,14 +56,14 @@
                 >
                   Forgot your password?
                 </a>
-              </div>
-              <button
-                class="flex items-center justify-center w-[199px] h-[56px] bg-[#8B0000] shadow-[0_0_7px_1px_#3E1112] rounded-[12px] hover:bg-[#a00000] transition-colors mx-auto cursor-pointer"
-              >
-                <span class="font-semibold text-[20px] text-white"
-                  >Sign in</span
+                <button
+                  class="flex items-center justify-center w-[199px] h-[56px] bg-[#8B0000] shadow-[0_0_7px_1px_#3E1112] rounded-[12px] hover:bg-[#a00000] transition-colors mx-auto cursor-pointer"
                 >
-              </button>
+                  <span class="font-semibold text-[20px] text-white"
+                    >Sign in</span
+                  >
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -216,8 +221,11 @@
 
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 import NikolayCircles from "../../assets/NikolayCircles.vue";
 import NikolayCirclesBlue from "../../assets/NikolayCirclesBlue.vue";
+
+const router = useRouter();
 
 const isSignUpActive = ref(false);
 
@@ -225,6 +233,7 @@ const togglePanel = () => {
   isSignUpActive.value = !isSignUpActive.value;
 };
 
+// Форма
 const formData = ref({
   username: "",
   email: "",
@@ -237,5 +246,66 @@ const error = ref("");
 const submitForm = async () => {
   message.value = "";
   error.value = "";
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/accounts/register/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData.value),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      message.value = data.message || "Регистрация прошла успешно!";
+      formData.value = { username: "", email: "", password: "" };
+
+      setTimeout(() => {
+        isSignUpActive.value = false;
+      }, 1500);
+    } else {
+      error.value = data.errors
+        ? JSON.stringify(data.errors)
+        : JSON.stringify(data);
+    }
+  } catch (err) {
+    error.value = "Ошибка сети: Не удалось подключиться к серверу Django";
+  }
+};
+
+// Переменная для данных входа
+const loginData = ref({
+  email: "",
+  password: "",
+});
+
+const submitLogin = async () => {
+  message.value = "";
+  error.value = "";
+
+  try {
+    const response = await fetch("http://127.0.0.1:8000/accounts/login/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData.value),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      message.value = data.message;
+      loginData.value = { email: "", password: "" };
+
+      router.push("/");
+    } else {
+      error.value = data.error || "Ошибка авторизации";
+    }
+  } catch (err) {
+    error.value = "Ошибка сети: Не удалось подключиться к серверу";
+  }
 };
 </script>
