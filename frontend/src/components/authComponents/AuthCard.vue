@@ -82,12 +82,16 @@
             <p class="font-normal text-[20px] text-center text-white m-0">
               Use your E-mail for registration
             </p>
-            <div class="flex flex-col gap-[32px] w-full">
+            <form
+              @submit.prevent="submitForm"
+              class="flex flex-col gap-[32px] w-full"
+            >
               <div class="flex flex-col gap-[12px] w-full">
                 <div
                   class="flex items-center p-[24px] h-[72px] bg-[#1F1E1E] rounded-[20px]"
                 >
                   <input
+                    v-model="formData.username"
                     type="text"
                     placeholder="Name"
                     class="flex-grow bg-transparent font-normal text-[20px] text-white outline-none placeholder-white/50"
@@ -97,6 +101,7 @@
                   class="flex items-center p-[24px] h-[72px] bg-[#1F1E1E] rounded-[20px]"
                 >
                   <input
+                    v-model="formData.email"
                     type="email"
                     placeholder="E-mail"
                     class="flex-grow bg-transparent font-normal text-[20px] text-white outline-none placeholder-white/50"
@@ -106,6 +111,7 @@
                   class="flex items-center p-[24px] h-[72px] bg-[#1F1E1E] rounded-[20px]"
                 >
                   <input
+                    v-model="formData.password"
                     type="password"
                     placeholder="Password"
                     class="flex-grow bg-transparent font-normal text-[20px] text-white outline-none placeholder-white/50"
@@ -113,13 +119,14 @@
                 </div>
               </div>
               <button
+                type="submit"
                 class="flex items-center justify-center w-[199px] h-[56px] bg-[#1000BF] shadow-[0_0_7px_1px_#3E1112] rounded-[12px] hover:bg-[#1003A0] transition-colors mx-auto cursor-pointer"
               >
                 <span class="font-semibold text-[20px] text-white"
                   >Sign Up</span
                 >
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -199,6 +206,12 @@
       </div>
     </div>
   </div>
+  <div v-if="message" class="mt-4 p-3 bg-green-100 text-green-700 rounded">
+    {{ message }}
+  </div>
+  <div v-if="error" class="mt-4 p-3 bg-red-100 text-red-700 rounded">
+    {{ error }}
+  </div>
 </template>
 
 <script setup>
@@ -210,5 +223,19 @@ const isSignUpActive = ref(false);
 
 const togglePanel = () => {
   isSignUpActive.value = !isSignUpActive.value;
+};
+
+const formData = ref({
+  username: "",
+  email: "",
+  password: "",
+});
+
+const message = ref("");
+const error = ref("");
+
+const submitForm = async () => {
+  message.value = "";
+  error.value = "";
 };
 </script>

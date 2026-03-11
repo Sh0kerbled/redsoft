@@ -1,22 +1,19 @@
-from django.shortcuts import render, redirect
+import json
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from .forms import RegisterForm
-from django.contrib.auth import get_user_model
 
-User = get_user_model() 
-
-def page(request):
-    return render(request, 'pages/page.html')
-
-def register(request):
-
+@csrf_exempt
+def api_register(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
+        data = json.loads(request.body)
+
+        form = RegisterForm(data)
 
         if form.is_valid():
             form.save()
-            return redirect("/accounts/login/")
-
+            return JsonResponse({'message': 'Регистрация прошла успешно'}, status=201)
     else:
-        form = RegisterForm()
+        return JsonResponse({'errors': form.error}, status=400)
 
-    return render(request, "registration/register.html", {"form": form})
+    return JsonResponse({'error': 'Разрешены только POST запросы'}, status=405)

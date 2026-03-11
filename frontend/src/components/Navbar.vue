@@ -96,16 +96,13 @@
 </template>
 
 <script setup>
-// 1. Все импорты строго на самом верху!
 import { ref } from "vue";
 import { RouterLink } from "vue-router";
 import { useI18n } from "vue-i18n";
 import logo from "../assets/logo.vue";
 
-// 2. Инициализация плагинов
 const { locale } = useI18n();
 
-// 3. Данные и логика компонента
 const menuLinks = [
   { text: "About us", id: "about" },
   { text: "Features", id: "features" },
@@ -129,14 +126,12 @@ const languages = [
   { code: "zh", label: "Chi" },
 ];
 
-// По умолчанию Eng (индекс 2)
 const selectedLang = ref(languages[2]);
 
 const selectLanguage = (lang) => {
   selectedLang.value = lang;
   isOpen.value = false;
 
-  // Меняем язык в самом приложении
   locale.value = lang.code;
   localStorage.setItem("lang", lang.code);
 };
