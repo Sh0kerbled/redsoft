@@ -18,7 +18,7 @@ def api_register(request):
             form.save()
             return JsonResponse({'message': 'Регистрация прошла успешно'}, status=201)
     else:
-        return JsonResponse({'errors': form.error}, status=400)
+        return JsonResponse({'errors': form.errors}, status=400)
 
     return JsonResponse({'error': 'Разрешены только POST запросы'}, status=405)
 
@@ -39,7 +39,10 @@ def api_login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
+                setattr(request, '_dont_enforce_csrf_checks', True)
+                
                 login(request, user)
+                
                 return JsonResponse({
                     "message": "Успешный вход!", 
                     "user": {"username": user.username, "email": user.email}
