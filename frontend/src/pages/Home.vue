@@ -9,6 +9,7 @@
       <Features />
       <Advantages />
       <FAQ />
+      <Instructions />
       <Pricing />
     </main>
     <Footer />
@@ -24,4 +25,5 @@ import Advantages from "@/components/Advantages.vue";
 import FAQ from "@/components/FAQ.vue";
 import Pricing from "@/components/Pricing.vue";
 import Footer from "@/components/Footer.vue";
+import Instructions from "../components/Instructions.vue";
 </script>
