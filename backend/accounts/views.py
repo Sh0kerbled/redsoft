@@ -21,6 +21,7 @@ def api_register(request):
         return JsonResponse({'errors': form.errors}, status=400)
 
     return JsonResponse({'error': 'Разрешены только POST запросы'}, status=405)
+    # print('hello world')
 
 @csrf_exempt
 def api_login(request):
