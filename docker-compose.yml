@@ -21,6 +21,7 @@ services:
     image: postgres:latest
     container_name: postgres_container
     environment:
+      DB_HOST: postgres 
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 4252642526
       POSTGRES_DB: redsoft_db

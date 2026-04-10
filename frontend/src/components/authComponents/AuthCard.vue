@@ -233,7 +233,6 @@ const togglePanel = () => {
   isSignUpActive.value = !isSignUpActive.value;
 };
 
-// Форма
 const formData = ref({
   username: "",
   email: "",
@@ -275,7 +274,6 @@ const submitForm = async () => {
   }
 };
 
-// Переменная для данных входа
 const loginData = ref({
   email: "",
   password: "",
