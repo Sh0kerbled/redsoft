@@ -1,7 +1,7 @@
 <template>
   <section id="pricing">
     <div
-      class="w-full flex justify-center relative font-['Montserrat'] bg-transparent"
+      class="w-full flex justify-center relative font-Montserrat bg-transparent"
     >
       <div class="relative w-[1200px] h-[886px] shrink-0">
         <div class="absolute inset-0 pointer-events-none z-0">
@@ -74,7 +74,7 @@
                 ></div>
               </div>
               <span
-                class="font-['Inter'] font-light text-[20px] leading-[24px] flex items-center text-center text-white m-0"
+                class="font-Montserrat font-light text-[20px] leading-[24px] flex flex-wrap items-center text-center text-white m-0"
               >
                 {{ feature }}
               </span>
@@ -102,7 +102,7 @@
           </div>
 
           <div
-            class="relative flex flex-col items-start gap-[40px] w-[264px] z-10"
+            class="relative flex flex-col items-start gap-[40px] w-[278px] z-10"
           >
             <div
               class="flex flex-col items-start gap-[12px] w-[104px] h-[75px]"
@@ -133,7 +133,7 @@
                   ></div>
                 </div>
                 <span
-                  class="font-['Inter'] font-light text-[20px] leading-[24px] flex items-center text-center text-white m-0"
+                  class="font-Montserrat font-light text-[20px] leading-[24px] flex flex-wrap items-center text-center text-white m-0"
                 >
                   {{ feature }}
                 </span>
@@ -162,7 +162,7 @@
           </div>
 
           <div
-            class="absolute top-[28px] left-[28px] flex flex-col items-start gap-[40px] w-[264px] z-10"
+            class="absolute top-[28px] left-[28px] flex flex-col items-start gap-[40px] w-[278px] z-10"
           >
             <div
               class="flex flex-col items-start gap-[12px] w-[147px] h-[75px]"
@@ -193,7 +193,7 @@
                   ></div>
                 </div>
                 <span
-                  class="font-['Inter'] font-light text-[20px] leading-[24px] flex items-center text-center text-white m-0"
+                  class="font-Montserrat font-light text-[20px] leading-[24px] flex items-center text-center text-white m-0"
                 >
                   {{ feature }}
                 </span>

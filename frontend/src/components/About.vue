@@ -1,7 +1,7 @@
 <template>
   <section id="about">
     <div
-      class="w-full bg-black flex justify-center overflow-y-clip font-['Montserrat']"
+      class="w-full bg-black flex justify-center overflow-y-clip font-montserrat"
     >
       <div class="relative w-[1200px] h-[715px] shrink-0">
         <div
@@ -32,7 +32,7 @@
                   </h3>
                   <p
                     id="about-anchor"
-                    class="font-normal text-[20px] leading-[28px] text-[#F5F5F5] m-0"
+                    class="text-[20px] leading-[28px] text-[#F5F5F5] m-0"
                   >
                     Our product offers powerful functionality for centralized
                     automation of your accounts. Enjoy convenient in-game time

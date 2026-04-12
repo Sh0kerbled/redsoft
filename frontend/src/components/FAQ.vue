@@ -1,7 +1,7 @@
 <template>
   <section id="faq">
     <div
-      class="w-full flex justify-center relative font-['Montserrat'] bg-transparent"
+      class="w-full flex justify-center relative font-montserrat bg-transparent"
     >
       <div class="relative w-[1200px] h-[1047px] shrink-0">
         <div

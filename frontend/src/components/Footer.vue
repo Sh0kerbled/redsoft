@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-black flex justify-center font-['Montserrat'] border-t border-[#434343]"
+    class="w-full bg-black flex justify-center font-Montserrat border-t border-[#434343]"
   >
     <div
       class="box-border flex flex-row justify-between items-center px-[80px] py-[96px] gap-[181px] w-[1200px] h-[545px]"
@@ -14,14 +14,14 @@
           <div class="flex flex-row items-center gap-[12px] w-[383px] h-[56px]">
             <Logo class="w-[56px] h-[56px] justify-center"></Logo>
             <span
-              class="font-['Montserrat'] font-semibold text-[24px] leading-[26px] flex items-center text-white"
+              class="font-Montserrat font-semibold text-[24px] leading-[26px] flex items-center text-white"
             >
               REDSOFT
             </span>
           </div>
 
           <p
-            class="w-[383px] h-[130px] font-['Montserrat'] font-normal text-[20px] leading-[26px] flex items-center text-[#D9D9D9] m-0"
+            class="w-[383px] h-[130px] font-Montserrat font-normal text-[20px] leading-[26px] flex items-center text-[#D9D9D9] m-0"
           >
             Advanced automation and management tools for Steam. Professional
             dashboard, real-time monitoring, and secure stealth algorithms. Take

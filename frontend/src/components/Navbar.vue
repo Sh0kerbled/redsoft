@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full bg-black border-b border-[#434343] font-['Montserrat']">
+  <header class="w-full bg-black border-b border-[#434343] font-Montserrat">
     <div
       class="max-w-[1200px] h-[100px] mx-auto px-16 flex items-center justify-between box-border"
     >

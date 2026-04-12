@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full min-h-screen bg-black flex justify-center font-['Montserrat']"
-  >
+  <div class="w-full min-h-screen bg-black flex justify-center font-Montserrat">
     <div class="relative w-[1200px] h-[1072px] shrink-0">
       <div
         class="absolute w-[843px] h-[877px] right-[179px] bottom-0 bg-[linear-gradient(180deg,#4C001C_0%,#0B004C_22.12%,#1B00B2_100%)] blur-[600px] pointer-events-none z-0"

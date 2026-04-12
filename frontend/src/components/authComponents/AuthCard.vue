@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full my-10 bg-black flex items-center justify-center font-['Montserrat']"
+    class="w-full my-10 bg-black flex items-center justify-center font-Montserrat"
   >
     <div
       class="relative w-[1040px] h-[682px] bg-black shadow-[0_0_12px_rgba(255,255,255,0.5)] rounded-[40px] overflow-hidden"
