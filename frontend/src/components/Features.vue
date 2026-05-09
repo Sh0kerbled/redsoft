@@ -1,9 +1,11 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, onMounted } from "vue";
 import { ChevronLeft, ChevronRight } from "lucide-vue-next";
+import AOS from "aos";
 import MainPage from "../assets/Main page 1.svg";
 import Game from "../assets/Game 3.svg";
 import Accounts from "../assets/Accounts 1.svg";
+
 const slides = [
   {
     id: "main",
@@ -30,7 +32,6 @@ const slides = [
 
 const currentIndex = ref(0);
 
-// Переключение слайдов (User Flow: бесконечный цикл)
 const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % slides.length;
 };
@@ -39,19 +40,16 @@ const prevSlide = () => {
   currentIndex.value = (currentIndex.value - 1 + slides.length) % slides.length;
 };
 
-// Вычисление позиций слайдов (что слева, что по центру, что справа)
 const getSlideClass = (index) => {
-  if (index === currentIndex.value) {
-    return "slide-active";
-  } else if (
-    index ===
-    (currentIndex.value - 1 + slides.length) % slides.length
-  ) {
+  if (index === currentIndex.value) return "slide-active";
+  else if (index === (currentIndex.value - 1 + slides.length) % slides.length)
     return "slide-prev";
-  } else {
-    return "slide-next";
-  }
+  else return "slide-next";
 };
+
+onMounted(() => {
+  AOS.refresh();
+});
 </script>
 
 <template>
@@ -59,22 +57,24 @@ const getSlideClass = (index) => {
     id="features"
     class="flex flex-col items-center justify-center py-24 px-5 relative bg-[#000000] w-full max-w-[1200px] mx-auto rounded-[40px] overflow-hidden my-20"
   >
-    <!-- Красный Blur эффект на фоне -->
     <div
       class="absolute w-[736px] h-[563px] top-24 left-1/2 -translate-x-1/2 bg-[#560000] blur-[60px] rounded-full z-0 pointer-events-none"
-    ></div>
+    />
 
-    <!-- Заголовок -->
     <h2
-      class="text-white text-[32px] font-bold font-['Montserrat'] leading-[39px] text-center z-10 mb-16"
+      data-aos="fade-up"
+      data-aos-duration="800"
+      class="text-white text-[32px] font-bold font-Montserrat leading-[39px] text-center z-10 mb-16"
     >
       Features
     </h2>
 
     <div
+      data-aos="fade-up"
+      data-aos-duration="800"
+      data-aos-delay="150"
       class="relative w-full max-w-[1040px] h-[620px] flex flex-col items-center z-10"
     >
-      <!-- Контейнер с изображениями (Карусель) -->
       <div class="relative w-full h-[421px] flex justify-center items-center">
         <div
           v-for="(slide, index) in slides"
@@ -87,16 +87,13 @@ const getSlideClass = (index) => {
             :alt="slide.title"
             class="w-full h-full object-cover"
           />
-
-          <!-- Градиент для неактивных слайдов -->
           <div
             v-if="index !== currentIndex"
             class="absolute inset-0 bg-black/60 pointer-events-none transition-opacity duration-500"
-          ></div>
+          />
         </div>
       </div>
 
-      <!-- Текстовое описание активного слайда -->
       <div
         class="w-full mt-10 px-8 flex flex-col gap-4 text-center items-center h-[175px]"
       >
@@ -106,12 +103,12 @@ const getSlideClass = (index) => {
             class="w-full max-w-[976px] flex flex-col gap-4"
           >
             <h3
-              class="text-white text-[32px] font-semibold font-['Montserrat'] leading-[39px]"
+              class="text-white text-[32px] font-semibold font-Montserrat leading-[39px]"
             >
               {{ slides[currentIndex].title }}
             </h3>
             <p
-              class="text-[#F5F5F5] text-[20px] font-normal font-['Montserrat'] leading-[24px] text-justify"
+              class="text-[#F5F5F5] text-[20px] font-normal font-Montserrat leading-[24px] text-justify"
             >
               {{ slides[currentIndex].description }}
             </p>
@@ -119,7 +116,6 @@ const getSlideClass = (index) => {
         </transition>
       </div>
 
-      <!-- Кнопки навигации -->
       <button
         @click="prevSlide"
         class="absolute left-[80px] top-[180px] w-[64px] h-[62px] bg-[#1F1E1E] border-2 border-[#434343] rounded-full flex items-center justify-center hover:border-white transition-colors duration-300 z-20 group"
@@ -142,7 +138,6 @@ const getSlideClass = (index) => {
 </template>
 
 <style scoped>
-/* Анимации текста */
 .fade-enter-active,
 .fade-leave-active {
   transition:
@@ -158,7 +153,6 @@ const getSlideClass = (index) => {
   transform: translateY(-10px);
 }
 
-/* Стили для Карусели изображений */
 .slide-active {
   width: 736px;
   height: 421px;
@@ -169,7 +163,6 @@ const getSlideClass = (index) => {
     32px 20px 120px rgba(121, 91, 255, 0.24);
   opacity: 1;
 }
-
 .slide-prev {
   width: 600px;
   height: 338px;
@@ -177,7 +170,6 @@ const getSlideClass = (index) => {
   transform: translateX(-220px) scale(0.9);
   opacity: 0.8;
 }
-
 .slide-next {
   width: 600px;
   height: 338px;

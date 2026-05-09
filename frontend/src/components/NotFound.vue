@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from "vue-router";
-import { Globe } from "lucide-vue-next";
+
 import logo from "../assets/logo.vue";
 import { RouterLink } from "vue-router";
 import { ref } from "vue";

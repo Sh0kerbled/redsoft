@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
       colors: {
         "brand-red": "#8B0000",

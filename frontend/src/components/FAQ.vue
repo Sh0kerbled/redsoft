@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { Plus, Minus } from "lucide-vue-next";
+import AOS from "aos";
 
 const faqs = [
-  // ... ваш массив faqs остается без изменений
   {
     id: 1,
     question: "What is RedSoft?",
@@ -63,55 +63,63 @@ const faqs = [
 const activeId = ref(null);
 
 const toggleFaq = (id) => {
-  if (activeId.value === id) {
-    activeId.value = null;
-  } else {
-    activeId.value = id;
-  }
+  activeId.value = activeId.value === id ? null : id;
 };
+
+onMounted(() => {
+  AOS.refresh();
+});
 </script>
 
 <template>
-  <!-- УБРАН класс overflow-hidden, чтобы свет мог "вытекать" за пределы секции -->
   <section id="faq" class="flex flex-col items-center py-24 w-full my-20">
     <div class="relative w-full max-w-[1200px] flex flex-col items-center">
-      <!-- Фоновые размытые пятна -->
       <div
         class="absolute w-[452px] h-[452px] -left-[240px] -top-[52px] bg-[linear-gradient(180deg,#1100CC_0%,#A50003_100%)] rounded-full blur-[210px] pointer-events-none z-0 mix-blend-screen"
-      ></div>
+      />
       <div
         class="absolute w-[400px] h-[400px] left-[920px] top-[699px] bg-[linear-gradient(180deg,#A71613_0%,#2600FF_100%)] rounded-full blur-[210px] pointer-events-none z-0 mix-blend-screen"
-      ></div>
+      />
 
-      <!-- Заголовок и подзаголовок -->
-      <div class="flex flex-col items-center gap-4 mb-16 z-10 w-full">
+      <!-- Заголовок -->
+      <div
+        data-aos="fade-down"
+        data-aos-duration="800"
+        class="flex flex-col items-center gap-4 mb-16 z-10 w-full"
+      >
         <h2
-          class="text-white text-[32px] font-bold font-['Montserrat'] leading-[39px] text-center"
+          class="text-white text-[32px] font-bold font-Montserrat leading-[39px] text-center"
         >
           Frequently Asked Questions
         </h2>
         <p
-          class="text-[#D9D9D9] text-[20px] font-normal font-['Montserrat'] leading-[24px] text-center"
+          class="text-[#D9D9D9] text-[20px] font-normal font-Montserrat leading-[24px] text-center"
         >
           Here you can see frequently asked questions about our program.
         </p>
       </div>
 
-      <!-- Список вопросов -->
+      <!-- FAQ список -->
       <div class="w-full max-w-[960px] flex flex-col gap-4 z-10 px-5 relative">
-        <div v-for="faq in faqs" :key="faq.id" class="flex flex-col w-full">
+        <div
+          v-for="(faq, index) in faqs"
+          :key="faq.id"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          :data-aos-delay="index * 60"
+          class="flex flex-col w-full"
+        >
           <button
             @click="toggleFaq(faq.id)"
-            class="flex flex-row justify-between items-center p-6 w-full text-left transition-all duration-300"
-            :class="[
-              'border-2 border-[#434343] hover:border-white/50 group',
+            class="flex flex-row justify-between items-center p-6 w-full text-left transition-all duration-300 border-2 border-[#434343] hover:border-white/50 group"
+            :class="
               activeId === faq.id
                 ? 'rounded-t-[20px] rounded-b-none'
-                : 'rounded-[20px]',
-            ]"
+                : 'rounded-[20px]'
+            "
           >
             <span
-              class="text-white text-[20px] font-normal font-['Montserrat'] leading-[24px]"
+              class="text-white text-[20px] font-normal font-Montserrat leading-[24px]"
             >
               {{ faq.question }}
             </span>
@@ -124,13 +132,13 @@ const toggleFaq = (id) => {
             </div>
           </button>
 
-          <transition name="accordion" @enter="onEnter" @leave="onLeave">
+          <transition name="accordion">
             <div
               v-show="activeId === faq.id"
               class="w-full px-6 py-6 border-b-2 border-x-2 border-[#434343] rounded-b-[20px] bg-transparent"
             >
               <p
-                class="text-white text-[20px] font-normal font-['Montserrat'] leading-[24px]"
+                class="text-white text-[20px] font-normal font-Montserrat leading-[24px]"
               >
                 {{ faq.answer }}
               </p>

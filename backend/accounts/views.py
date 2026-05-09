@@ -11,17 +11,17 @@ User = get_user_model()
 def api_register(request):
     if request.method == "POST":
         data = json.loads(request.body)
-
         form = RegisterForm(data)
 
         if form.is_valid():
             form.save()
             return JsonResponse({'message': 'Регистрация прошла успешно'}, status=201)
-    else:
-        return JsonResponse({'errors': form.errors}, status=400)
+        else:
+            # else теперь на своём месте
+            return JsonResponse({'errors': form.errors}, status=400)
 
     return JsonResponse({'error': 'Разрешены только POST запросы'}, status=405)
-    # print('hello world')
+
 
 @csrf_exempt
 def api_login(request):
@@ -41,17 +41,20 @@ def api_login(request):
 
             if user is not None:
                 setattr(request, '_dont_enforce_csrf_checks', True)
-                
                 login(request, user)
-                
+
                 return JsonResponse({
-                    "message": "Успешный вход!", 
-                    "user": {"username": user.username, "email": user.email}
+                    "message": "Успешный вход!",
+                    # Возвращаем user объект — фронт читает data.user.username
+                    "user": {
+                        "username": user.username,
+                        "email": user.email
+                    }
                 }, status=200)
             else:
                 return JsonResponse({"error": "Неверный пароль."}, status=400)
-                
+
         except json.JSONDecodeError:
             return JsonResponse({"error": "Неверный формат данных."}, status=400)
-            
+
     return JsonResponse({"error": "Разрешены только POST-запросы."}, status=405)
