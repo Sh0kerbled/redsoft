@@ -516,6 +516,9 @@ const submitLogin = async () => {
       const savedUsername = data.user?.username || loginData.value.email;
       localStorage.setItem("username", savedUsername);
 
+      localStorage.setItem("access", data.access);
+      localStorage.setItem("refresh", data.refresh);
+
       window.dispatchEvent(new Event("storage"));
 
       loginSuccess.value = "Welcome back! Redirecting...";

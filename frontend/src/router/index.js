@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/pages/Home.vue";
 import Auth from "@/pages/Auth.vue";
 import NotFound from "@/components/NotFound.vue";
+import PaymentSuccess from "@/pages/PaymentSuccess.vue";
+import PaymentCancel from "@/pages/PaymentCancel.vue";
 import AOS from "aos";
 
 const router = createRouter({
@@ -9,6 +11,16 @@ const router = createRouter({
   routes: [
     { path: "/", name: "Home", component: Home },
     { path: "/Auth", name: "Auth", component: Auth },
+    {
+      path: "/payment/success",
+      name: "PaymentSuccess",
+      component: PaymentSuccess,
+    },
+    {
+      path: "/payment/cancel",
+      name: "PaymentCancel",
+      component: PaymentCancel,
+    },
     {
       path: "/:pathMatch(.*)*",
       name: "not-found",

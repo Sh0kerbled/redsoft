@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.views.decorators.csrf import csrf_exempt
 from .forms import RegisterForm
 from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.tokens import RefreshToken
 
 User = get_user_model()
 
@@ -17,7 +18,6 @@ def api_register(request):
             form.save()
             return JsonResponse({'message': 'Регистрация прошла успешно'}, status=201)
         else:
-            # else теперь на своём месте
             return JsonResponse({'errors': form.errors}, status=400)
 
     return JsonResponse({'error': 'Разрешены только POST запросы'}, status=405)
@@ -40,12 +40,13 @@ def api_login(request):
             user = authenticate(request, username=username, password=password)
 
             if user is not None:
-                setattr(request, '_dont_enforce_csrf_checks', True)
-                login(request, user)
+                # Генерируем JWT токены
+                refresh = RefreshToken.for_user(user)
 
                 return JsonResponse({
                     "message": "Успешный вход!",
-                    # Возвращаем user объект — фронт читает data.user.username
+                    "access": str(refresh.access_token),
+                    "refresh": str(refresh),
                     "user": {
                         "username": user.username,
                         "email": user.email

@@ -8,11 +8,9 @@
           <div
             class="absolute w-[320px] h-[320px] left-[calc(50%-160px-360px)] top-[271px] bg-[linear-gradient(180deg,#770000_30.28%,#0E0042_100%)] rounded-full blur-[120px] mix-blend-screen"
           ></div>
-
           <div
             class="absolute w-[320px] h-[320px] left-[calc(50%-160px)] top-[470px] bg-[linear-gradient(180deg,#770000_30.28%,#0E0042_100%)] rounded-full blur-[120px] mix-blend-screen"
           ></div>
-
           <div
             class="absolute w-[320px] h-[320px] left-[calc(50%-160px+360px)] top-[271px] bg-[linear-gradient(180deg,#770000_30.28%,#0E0042_100%)] rounded-full blur-[120px] mix-blend-screen"
           ></div>
@@ -44,7 +42,6 @@
           >
             <Pattern2 class="w-full h-full object-cover" />
           </div>
-
           <div
             class="relative flex flex-col items-start gap-[12px] w-[90px] h-[75px] z-10"
           >
@@ -55,11 +52,9 @@
             </h3>
             <span
               class="w-[45px] h-[24px] font-normal text-[20px] leading-[24px] text-center text-[#D9D9D9]"
+              >Free</span
             >
-              Free
-            </span>
           </div>
-
           <div class="relative flex flex-col items-start gap-[8px] w-full z-10">
             <div
               v-for="(feature, idx) in basicFeatures"
@@ -75,18 +70,17 @@
               </div>
               <span
                 class="font-Montserrat font-light text-[20px] leading-[24px] flex flex-wrap items-center text-center text-white m-0"
+                >{{ feature }}</span
               >
-                {{ feature }}
-              </span>
             </div>
           </div>
-
           <button
-            class="absolute flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] left-[calc(50%-93px)] bottom-[32px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors"
+            class="absolute flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] left-[calc(50%-93px)] bottom-[32px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled
           >
             <span
               class="font-normal text-[20px] leading-[24px] text-center text-white"
-              >Activate</span
+              >Current Plan</span
             >
           </button>
         </div>
@@ -100,7 +94,6 @@
           >
             <Pattern2 class="w-full h-full object-cover" />
           </div>
-
           <div
             class="relative flex flex-col items-start gap-[40px] w-[278px] z-10"
           >
@@ -114,11 +107,9 @@
               </h3>
               <span
                 class="w-[104px] h-[24px] font-normal text-[20px] leading-[24px] text-center text-[#D9D9D9]"
+                >$9.99 / mo</span
               >
-                $9.99 / mo
-              </span>
             </div>
-
             <div class="flex flex-col items-start gap-[8px] w-full">
               <div
                 v-for="(feature, idx) in proFeatures"
@@ -134,20 +125,21 @@
                 </div>
                 <span
                   class="font-Montserrat font-light text-[20px] leading-[24px] flex flex-wrap items-center text-center text-white m-0"
+                  >{{ feature }}</span
                 >
-                  {{ feature }}
-                </span>
               </div>
             </div>
           </div>
-
           <button
-            class="absolute flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] left-[calc(50%-93px)] bottom-[32px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors"
+            @click="subscribe('pro')"
+            :disabled="loadingPlan === 'pro'"
+            class="absolute flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] left-[calc(50%-93px)] bottom-[32px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span
               class="font-normal text-[20px] leading-[24px] text-center text-white"
-              >Activate</span
             >
+              {{ loadingPlan === "pro" ? "Loading..." : "Activate" }}
+            </span>
           </button>
         </div>
 
@@ -160,7 +152,6 @@
           >
             <Pattern2 class="w-full h-full object-cover" />
           </div>
-
           <div
             class="absolute top-[28px] left-[28px] flex flex-col items-start gap-[40px] w-[278px] z-10"
           >
@@ -174,11 +165,9 @@
               </h3>
               <span
                 class="w-[147px] h-[24px] font-normal text-[20px] leading-[24px] text-[#D9D9D9]"
+                >$19.99 / mo</span
               >
-                $19.99 / mo
-              </span>
             </div>
-
             <div class="flex flex-col items-start gap-[8px] w-full">
               <div
                 v-for="(feature, idx) in ultimateFeatures"
@@ -194,20 +183,21 @@
                 </div>
                 <span
                   class="font-Montserrat font-light text-[20px] leading-[24px] flex items-center text-center text-white m-0"
+                  >{{ feature }}</span
                 >
-                  {{ feature }}
-                </span>
               </div>
             </div>
           </div>
-
           <button
-            class="relative flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors"
+            @click="subscribe('ultimate')"
+            :disabled="loadingPlan === 'ultimate'"
+            class="relative flex flex-row justify-center items-center px-[52px] py-[12px] w-[186px] h-[48px] bg-[#8B0000] shadow-[0px_0px_7px_1px_#3E1112] rounded-[12px] z-10 hover:bg-[#a00000] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <span
               class="font-normal text-[20px] leading-[24px] text-center text-white"
-              >Activate</span
             >
+              {{ loadingPlan === "ultimate" ? "Loading..." : "Activate" }}
+            </span>
           </button>
         </div>
       </div>
@@ -216,7 +206,13 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import axios from "axios";
 import Pattern2 from "../assets/Pattern2.vue";
+
+const router = useRouter();
+const loadingPlan = ref(null);
 
 const basicFeatures = ["2 Steam account", "Single session", "Basic monitoring"];
 
@@ -238,4 +234,27 @@ const ultimateFeatures = [
   "Bulk Management",
   "Priority Support",
 ];
+
+const subscribe = async (plan) => {
+  const token = localStorage.getItem("access");
+  if (!token) {
+    router.push("/Auth");
+    return;
+  }
+
+  loadingPlan.value = plan;
+  try {
+    const { data } = await axios.post(
+      "/payments/create-subscription/",
+      { plan },
+      { headers: { Authorization: `Bearer ${token}` } },
+    );
+    window.location.href = data.approval_url;
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    loadingPlan.value = null;
+  }
+};
 </script>

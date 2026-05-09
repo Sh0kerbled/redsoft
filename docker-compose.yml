@@ -5,11 +5,17 @@ services:
       - ./backend:/app
     ports:
       - 8000:8000
+    environment:
+      - PAYPAL_CLIENT_ID=${PAYPAL_CLIENT_ID}
+      - PAYPAL_CLIENT_SECRET=${PAYPAL_CLIENT_SECRET}
+      - PAYPAL_MODE=sandbox
+      - PAYPAL_PRO_PLAN_ID=${PAYPAL_PRO_PLAN_ID}
+      - PAYPAL_ULTIMATE_PLAN_ID=${PAYPAL_ULTIMATE_PLAN_ID}
+      - FRONTEND_URL=http://localhost:5173
     depends_on:
       postgres:
         condition: service_healthy
-    restart: on-failure  # ✅
-  
+    restart: on-failure  
   frontend:
     build: ./frontend
     volumes:
@@ -22,20 +28,20 @@ services:
     image: postgres:latest
     container_name: postgres_container
     environment:
-      POSTGRES_USER: postgres         # ✅ Removed DB_HOST
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 4252642526
       POSTGRES_DB: redsoft_db
       PGDATA: /var/lib/postgresql/data/pgdata
     ports:
-      - "5432:5432"  # ✅ Fixed mapping
+      - "5432:5432"
     volumes:
       - ./pgdata:/var/lib/postgresql/data/pgdata
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d redsoft_db"]
-      interval: 5s        # ✅ Faster checks
+      interval: 5s
       timeout: 5s
       retries: 10
-      start_period: 10s   # ✅ Grace period
+      start_period: 10s
     restart: unless-stopped
     tty: true
     stdin_open: true
