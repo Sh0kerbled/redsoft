@@ -6,7 +6,7 @@
       <logo />
 
       <nav
-        class="hidden md:flex items-center px-[40px] py-[8px] gap-[40px] h-[52px] border border-[#434343] rounded-[40px]"
+        class="hidden md:flex items-center px-[40px] py-[8px] gap-[40px] h-[52px] border border-[#434343] rounded-[40px] absolute left-1/2 -translate-x-1/2"
       >
         <a
           v-for="link in menuLinks"
